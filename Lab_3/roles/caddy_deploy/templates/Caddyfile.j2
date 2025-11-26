@@ -1,0 +1,14 @@
+{
+        auto_https off
+}
+
+http://{{ domain_name }}:8080 {
+        root * /usr/share/caddy
+        file_server
+
+        log {
+                output file {{ log.file }}
+                format json
+                level {{ log.level }}
+        }
+}
